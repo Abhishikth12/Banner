@@ -11,3 +11,106 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.g-brand-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 30 36 / var(--tw-bg-opacity));
+}
+
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.animate-letters {
+  display: inline-block;
+  animation: slide-in 0.5s forwards;
+  animation-delay: calc(var(--i) * 0.05s); /* Delay each letter */
+}
+@keyframes word-enter {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes word-exit {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.word-animation {
+  display: inline-block;
+}
+
+.animate-word {
+  animation: word-enter 0.5s forwards, word-exit 0.5s forwards;
+}
+
+.word-animation span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes word-enter {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes word-exit {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+/* Add margin bottom for the text and button */
+.text-gray-200 {
+  margin-bottom: 20px;
+}
+
+button {
+  margin-bottom: 20px;
+}
+.text-xl {
+  font-size: 1.5rem; /* Adjust as needed */
+}
